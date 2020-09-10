@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- Template -->
+<div id="app">
+    <p v-once>{{ titulo }} </p>
+    <p> {{ saudacao() }} </p>
+    <a v-bind:href="link"> GitHub</a>
+    <hr>
+    <p v-html='linkHTML'></p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app', 
+        data: {
+            titulo: 'Usando VueJS',
+            link: 'http://github.com/VitorBigelli',
+            linkHTML: '<a href="http://github.com/VitorBigelli">GitHub</a>'
+        },
+        methods: {
+            saudacao: function() {
+                this.titulo = 'Bom dia'
+                return this.titulo
+            }
+        }
+    })
+</script>
